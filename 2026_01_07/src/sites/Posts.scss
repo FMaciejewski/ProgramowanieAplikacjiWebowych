@@ -1,0 +1,16 @@
+.PostContainer{
+  width: 50%;
+  height: 20vh;
+  margin-block: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  background: #747bff;
+  border-radius: 10px;
+
+  p{
+    font-size: 1.2rem;
+    color: #fff;
+  }
+}
