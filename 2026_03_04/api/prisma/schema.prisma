@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model kategoria {
+  ID    Int    @id @default(autoincrement())
+  nazwa String @unique(map: "Kategoria_nazwa_key")
+  wpis  wpis[]
+}
+
+model komentarz {
+  ID         Int    @id @default(autoincrement())
+  uzytkownik String @db.VarChar(255)
+  tytul      String
+  opis       String @db.Text
+  wpisID     Int
+  wpis       wpis   @relation(fields: [wpisID], references: [ID], map: "Komentarz_wpisID_fkey")
+
+  @@index([wpisID], map: "Komentarz_wpisID_fkey")
+}
+
+model wpis {
+  ID          Int         @id @default(autoincrement())
+  tytul       String
+  opis        String      @db.Text
+  kategoriaID Int
+  komentarz   komentarz[]
+  kategoria   kategoria   @relation(fields: [kategoriaID], references: [ID], map: "Wpis_kategoriaID_fkey")
+
+  @@index([kategoriaID], map: "Wpis_kategoriaID_fkey")
+}
