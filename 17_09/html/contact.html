@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Strona Główna</a>
+        <a href="/kontakt">Kontakt</a>
+    </nav>
+    <form method="get" action="/kontakt">
+        <label for="name">Imie:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Wiadomość:</label>
+        <textarea id="message" name="message" required></textarea>
+        <input type="submit" value="Wyslij">
+    </form>
+    <footer>
+        <p>Stronę wykonał Filip Maciejewski | 2026</p>
+    </footer>
+</body>
+</html>

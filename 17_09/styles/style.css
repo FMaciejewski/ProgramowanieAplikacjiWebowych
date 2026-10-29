@@ -1,0 +1,23 @@
+nav{
+    background-color: hotpink;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+footer{
+    background-color: pink;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+p{
+    margin-bottom: 10px;
+}
